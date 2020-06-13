@@ -1,0 +1,61 @@
+{% extends "../layout/base.html" %}
+{% import "../layout/side.html" as side %}
+
+<!--样式引入-->
+{% block link %}
+<link rel="stylesheet" type="text/css" href="/public/css/jquery.page.css" >
+{% endblock %}
+
+<!--侧边栏-->
+{% block side %}
+    {{ side.aside('order') }}
+{% endblock %}
+
+<!--中间内容-->
+{% block content %}
+<section class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">订单列表</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-wrap table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>标题</th>
+                    <th>简介</th>
+                    <th>发布者</th>
+                    <th>公式</th>
+                    <th>使用量</th>
+                    <th>排序</th>
+                    <th>标签</th>
+                    <th>创建时间</th>
+                    <th>状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>ID</td>
+                    <td>ID</td>
+                    <td>ID</td>
+                    <td>ID</td>
+                    <td>ID</td>
+                    <td>ID</td>
+                    <td>ID</td>
+                    <td>ID</td>
+                    <td>ID</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <div class="card-footer clearfix">
+        <!--分页-->
+        <div id="page" class="page"></div>
+    </div>
+</section>
+{% endblock %}

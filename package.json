@@ -1,0 +1,52 @@
+{
+  "name": "gosbackend",
+  "version": "1.0.0",
+  "description": "Egg 后台管理",
+  "private": true,
+  "dependencies": {
+    "egg": "^2.20.1",
+    "egg-scripts": "^2.11.0",
+    "egg-sequelize": "^4.3.1",
+    "uuid": "^3.3.2",
+    "egg-view-nunjucks": "^2.2.0",
+    "egg-validate": "^2.0.2",
+    "captchapng2": "^1.0.3",
+    "mysql2": "^1.6.5",
+    "svg-captcha": "^1.3.12",
+    "simple-encryptor": "^2.0.0",
+    "dayjs": "^1.8.10",
+    "internal-ip": "^4.2.0",
+    "ljtools": "^1.0.12",
+    "md5": "^2.2.1",
+    "lodash": "^4.17.11",
+    "await-stream-ready": "^1.0.1"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.1",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.22.1",
+    "eslint": "^5.15.1",
+    "eslint-config-egg": "^7.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-backend",
+    "stop": "egg-scripts stop --title=egg-backend",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "author": "Gos.cc"
+}

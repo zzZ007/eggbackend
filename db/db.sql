@@ -28,7 +28,7 @@ CREATE TABLE `g_user` (
 -- Records of g_user
 -- ----------------------------
 BEGIN;
-INSERT INTO `g_user` VALUES ('asdfafdsff1aefafe', 'admin', '管理员', 1, 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, 1, 1, NULL, '192.168.28.26', '2020-06-13 01:27:36', '2020-06-13 11:33:34');
+INSERT INTO `g_user` VALUES ('asdfafdsff1aefafe', 'admin', '管理员', 1, '$2a$10$no7Be24xrMORjMm1/nz81uDgrS71PGAbuSoE23lUr/kGVq85l1Y66', NULL, NULL, 1, 1, NULL, '192.168.28.26', '2020-06-13 01:27:36', '2020-06-13 11:33:34');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

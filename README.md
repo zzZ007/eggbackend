@@ -19,8 +19,9 @@ ORM框架：``sequelize``
 
 #### 安装教程
 
-1.  ```yarn install / npm insatll```
-2.  导入数据库：```/db/db.sql```
+1.  安装依赖: ```yarn install / npm insatll```
+2.  导入数据库: ```/db/db.sql```
+3. 测试账号: ```admin/123456```
 
 #### 使用说明
 

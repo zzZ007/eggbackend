@@ -18,15 +18,16 @@ module.exports = appInfo => {
     encrypt: true,
     renew: true,
   };
+  exports.bcrypt = {
+    saltRounds: 10, // default 10
+  };
   config.siteFile = {
     '/favicon.ico': fs.readFileSync(path.join(appInfo.baseDir, 'app/public/favicon.ico')),
   };
   // 项目描述
-  config.product = {
-    productName: 'GosBackend',
-    productDescription: '后台管理系统',
-    copyright: '2018-2020',
-    productUrl: '',
+  config.info = {
+    name: 'GosBackend',
+    desc: '后台管理系统',
     version: '1.0.0',
   };
   // 项目资源路径
@@ -44,12 +45,10 @@ module.exports = appInfo => {
     },
   };
   config.middleware = [
-    'interceptor',
-    'errorHandler',
+    'interceptor', // 用户拦截
+    'errorHandler', // 错误拦截
   ];
-  config.compress = {
-    threshold: 2048,
-  };
+  // 不检查用户登录
   config.interceptor = {
     ignore(ctx) {
       const ignoreUrl = [
@@ -66,6 +65,7 @@ module.exports = appInfo => {
       });
     },
   };
+  // 跨站配置
   config.security = {
     csrf: {
       useSession: false,
@@ -79,6 +79,7 @@ module.exports = appInfo => {
     },
     domainWhiteList: [ 'http://localhost:7001' ],
   };
+  // 跨越配置
   config.cors = {
     origin: '*',
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
@@ -87,68 +88,39 @@ module.exports = appInfo => {
   // 配置mysql信息
   config.sequelize = {
     dialect: 'mysql',
-    host: '127.0.0.1',
-    dialectOptions: {
+    host: '47.105.204.69',
+    dialectOptions: { // 配置日期返回格式化
       charset: 'utf8',
-      // collate: 'utf8_general_ci',
       dateStrings: true,
       typeCast: true,
     },
-    underscored: true,
     timezone: '+08:00',
+    underscored: true,
     port: 3306,
-    database: 'gos_backend', // mysql database dir
-    username: 'root',
-    password: 'root',
+    database: 'simple_zy', // mysql database dir
+    username: 'simpley_zy',
+    password: '5wn3WKtZaXncZaci',
+    pool: {
+      max: 5, // 连接池中最大连接数量
+      min: 0, // 连接池中最小连接数量
+      idle: 10000, // 如果一个线程 10 秒钟内没有被使用过的话，那么就释放线程
+    },
   };
   config.cors = {
     origin: '*',
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
     credentials: true,
   };
-  // config.redis = {
-  //     client: {
-  //         port: 6379,          // Redis port
-  //         host: '127.0.0.1',   // Redis host
-  //         password: '',
-  //         db: 0,
-  //     },
-  // };
   config.multipart = {
     fileExtensions: [
       '.xlsx',
       '.apk',
     ],
   };
-  // config.sms = {
-  //     client: {
-  //         accessKeyId: 'your access key',
-  //         secretAccessKey: 'your access secret'
-  //     }
-  // }
-  // config.oss = {
-  //     client: {
-  //         accessKeyId: 'your access key',
-  //         accessKeySecret: 'your access secret',
-  //         bucket: 'your bucket name',
-  //         endpoint: 'oss-cn-hongkong.aliyun.com',
-  //         timeout: '60s',
-  //     },
-  // };
   config.console = {
     // local 环境下默认值均为 true，prod 环境下均为 false
     debug: true,
     error: true,
-  };
-  // email配置
-  config.mail = {
-    host: 'smtp.163.com',
-    port: 465,
-    auth: {
-      user: '',
-      pass: '',
-    },
-    from: '',
   };
   return config;
 };

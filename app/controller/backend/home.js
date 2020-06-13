@@ -4,22 +4,14 @@ const { Controller } = require('egg');
 
 class HomeController extends Controller {
   async index() {
-    const { ctx, service } = this;
-    try {
-      ctx.app.config.product.productUrl = ctx.origin;
-      await ctx.render('backend/home');
-    } catch (e) {
-      throw new Error(e);
-    }
+    await this.ctx.render('backend/home', {
+      info: this.ctx.app.config.info,
+    });
   }
   async orders() {
-    const { ctx, service } = this;
-    try {
-      ctx.app.config.product.productUrl = ctx.origin;
-      await ctx.render('backend/orders');
-    } catch (e) {
-      throw new Error(e);
-    }
+    await this.ctx.render('backend/orders', {
+      info: this.ctx.app.config.info,
+    });
   }
 }
 module.exports = HomeController;

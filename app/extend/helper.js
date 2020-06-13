@@ -5,17 +5,23 @@
 * @ param
 */
 'use strict';
-const _l = require('lodash');
-const _date = require('dayjs');
-const _md5 = require('md5');
-const _uuid = require('uuid/v1');
-const _itools = require('ljtools');
-const _encrypt = require('simple-encryptor')('12131321321affa');
-module.exports = {
-  _l,
-  _date,
-  _md5,
-  _uuid,
-  _itools,
-  _encrypt,
+
+exports.encrypt = require('simple-encryptor')('afdasf1feafsdafdsafdaf112eaffaba');
+
+exports.isEmpty = function(obj) {
+  return obj === '' || obj === null || obj === void 0 || (Array.isArray(obj) && obj.length === 0);
+};
+
+exports.success = ({ ctx, res = null, msg = '请求成功' }) => {
+  ctx.body = {
+    code: 0,
+    data: res,
+    msg,
+  };
+  ctx.status = 200;
+};
+
+exports.errCode = {
+  ParamErr: 201,
+  NotFound: 202,
 };

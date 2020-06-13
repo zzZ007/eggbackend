@@ -1,7 +1,6 @@
 'use strict';
 
 const { Controller } = require('egg');
-const md5 = require('md5');
 const internalIp = require('internal-ip');
 const svgCaptcha = require('svg-captcha');
 
@@ -15,14 +14,13 @@ class UserController extends Controller {
   }
   // 登录
   async login() {
-    const { ctx } = this;
-    await ctx.render('backend/login');
+    await this.ctx.render('backend/login');
   }
+  // 退出登录
   async logout() {
-    const { ctx, service } = this;
-    await service.user.logout({ id: ctx.session.userInfo.id });
-    ctx.session = null;
-    await ctx.redirect('/');
+    await this.service.user.logout({ id: this.ctx.session.userInfo.id });
+    this.ctx.session = null;
+    await this.ctx.redirect('/');
   }
   async loginAction() {
     const { ctx, service } = this;
@@ -30,7 +28,7 @@ class UserController extends Controller {
     const cap = ctx.cookies.get('captcha');
     // 校验参数
     try {
-      if (ctx.helper._encrypt.decrypt(cap) !== params.validateCode) {
+      if (ctx.helper.encrypt.decrypt(cap) !== params.validateCode) {
         ctx.throw('验证码错误');
       }
       ctx.validate(this.UserLoginTransfer);
@@ -71,7 +69,7 @@ class UserController extends Controller {
       background: '#f0f1f5',
       color: true,
     });
-    const encrypted = ctx.helper._encrypt.encrypt(captcha.text);
+    const encrypted = ctx.helper.encrypt.encrypt(captcha.text);
     ctx.cookies.set('captcha', encrypted, { maxAge: 1800 * 1000, httpOnly: true });
     ctx.body = captcha.data;
   }

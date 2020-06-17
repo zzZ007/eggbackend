@@ -9,6 +9,7 @@
 业务范围：网站开发、安卓开发、IOS开发、PC开发、混合开发、微信小程序开发
 ```
 
+#### 后台预览
 ![](http://cd-doc.oss-cn-chengdu.aliyuncs.com/egg/bg-1.png "后台管理页")
 
 #### 软件架构
@@ -25,8 +26,8 @@ ORM框架：``sequelize``
 
 #### 安装教程
 
-1.  安装依赖: ```yarn install / npm insatll```
-2.  导入数据库: ```/db/db.sql```
+1.  安装依赖: ```yarn install / npm install```
+2.  导入数据库: ``` db/db.sql ```
 3. 测试账号: ```admin/123456```
 
 #### 使用说明
@@ -35,4 +36,6 @@ ORM框架：``sequelize``
 
 正式环境启动： ```npm run start```
 
+前端地址：``` 127.0.0.1:8080 ```
 
+后台地址：``` 127.0.0.1:8080/admin ```

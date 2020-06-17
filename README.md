@@ -3,7 +3,10 @@
 [![star](https://gitee.com/appers/eggbackend/badge/star.svg?theme=white)](https://gitee.com/appers/eggbackend/stargazers)
 
 #### 介绍
-使用 EggJS 快速搭建后台管理系统，简单站点的开发，快速搭建接口API开发
+> 使用 EggJS 快速搭建后台管理系统，简单站点的开发，快速搭建接口API开发
+
+> sequelize的分页使用、模板引擎nunjucks分页、JQ分页插件
+
 ```
 有需要开发的朋友联系邮箱：appjobs@aliyun.com
 业务范围：网站开发、安卓开发、IOS开发、PC开发、混合开发、微信小程序开发

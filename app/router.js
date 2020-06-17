@@ -2,15 +2,20 @@
 
 module.exports = app => {
   const { router, controller } = app;
-  router.redirect('/', '/index');
-  // 后端
-  router.get('/admin', controller.backend.admin.login);
-  router.post('/admin/login', controller.backend.admin.loginAction);
-  router.get('/captcha', controller.backend.admin.captcha);
-  router.get('/logout', controller.backend.admin.logout);
-  router.get('/admin/index', controller.backend.home.index);
-  router.get('/admin/orders', controller.backend.home.orders);
+  const backend = controller.backend;
+  const front = controller.front;
 
+  router.redirect('/', '/index');
+  router.get('/error', front.index.error);
+  // 后端
+  router.all('/admin', backend.login.login);
+  router.get('/captcha', backend.login.captcha);
+  router.get('/logout', backend.login.logout);
+  router.get('/admin/index', backend.home.index);
+  router.get('/admin/users', backend.home.users);
+  router.get('/admin/modify', backend.home.modify);
+  router.post('/admin/modifyAction', backend.home.modifyAction);
+  router.get('/admin/error', backend.home.error);
   // 前端
-  router.get('/index', controller.front.index.index);
+  router.get('/index', front.index.index);
 };

@@ -4,6 +4,12 @@
 
 #### 介绍
 使用 EggJS 快速搭建后台管理系统，简单站点的开发
+```
+有需要开发的朋友联系邮箱：appjobs@aliyun.com
+业务范围：网站开发、安卓开发、IOS开发、PC开发、混合开发、微信小程序开发
+```
+
+![](http://cd-doc.oss-cn-chengdu.aliyuncs.com/egg/bg-1.png "后台管理页")
 
 #### 软件架构
 

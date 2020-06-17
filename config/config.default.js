@@ -85,10 +85,18 @@ module.exports = appInfo => {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
     credentials: true,
   };
+  // 异常页面跳转
+  // config.onerror = {
+  //   // 线上页面发生异常时，重定向到这个页面上
+  //   errorPageUrl: 'error/error.html',
+  // };
+  config.notfound = {
+    pageUrl: '/error',
+  };
   // 配置mysql信息
   config.sequelize = {
     dialect: 'mysql',
-    host: '47.105.204.69',
+    host: '127.0.0.1',
     dialectOptions: { // 配置日期返回格式化
       charset: 'utf8',
       dateStrings: true,
@@ -99,7 +107,7 @@ module.exports = appInfo => {
     port: 3306,
     database: 'simple_zy', // mysql database dir
     username: 'simpley_zy',
-    password: '5wn3WKtZaXncZaci',
+    password: '',
     pool: {
       max: 5, // 连接池中最大连接数量
       min: 0, // 连接池中最小连接数量

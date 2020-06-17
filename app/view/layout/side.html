@@ -13,12 +13,21 @@
     </li>
 
     <li class="nav-item">
-        <a  href="/admin/orders" class="nav-link {% if active == 'order' %} active {% endif %}" >
+        <a  href="/admin/users" class="nav-link {% if active == 'users' %} active {% endif %}" >
             <i class="nav-icon fas fa-book"></i>
             <p>
-                订单管理
+                用户列表
             </p>
         </a>
     </li>
+    <li class="nav-item">
+        <a  href="/admin/error" class="nav-link {% if active == 'error' %} active {% endif %}" >
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+                抛出错误页
+            </p>
+        </a>
+    </li>
+
 </ul>
 {% endmacro %}

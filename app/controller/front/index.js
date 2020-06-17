@@ -10,5 +10,8 @@ class IndexController extends Controller {
       info: this.ctx.app.config.info,
     });
   }
+  async error() {
+    await this.ctx.render('error/error');
+  }
 }
 module.exports = IndexController;

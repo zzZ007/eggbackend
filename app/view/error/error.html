@@ -22,17 +22,24 @@
 	<script type="text/javascript" src="/public/js/toastr.min.js"></script>
 </head>
 <body class="hold-transition login-page">
-<div >
-	<!-- /.login-logo -->
-	<div class="card">
-		<div class="card-body">
-			 请求出错
-			<a href="/">返回首页</a>
-		</div>
-		<!-- /.login-card-body -->
-	</div>
-</div>
+<section class="content">
+	<div class="error-page">
+		<h2 class="headline text-danger">{{code}}</h2>
 
+		<div class="error-content">
+			<h3><i class="fas fa-exclamation-triangle text-danger"></i> 出现了错误.</h3>
+
+			<p>
+				工程师正在修复中，立即<a href="/">回到首页</a>
+			</p>
+			<p>
+				{{error}}
+			</p>
+		</div>
+	</div>
+	<!-- /.error-page -->
+
+</section>
 
 
 </body>

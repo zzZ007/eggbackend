@@ -9,9 +9,14 @@ class HomeController extends Controller {
     });
   }
   async users() {
-    await this.ctx.render('backend/users', {
-      info: this.ctx.app.config.info,
-    });
+    let { page } = this.ctx.request.query;
+    if (page === undefined){
+      page = 1;
+    } else {
+      page = parseInt(page);
+    }
+    const res = await this.service.user.findAll(page);
+    await this.ctx.render('backend/users', res);
   }
   async error() {
     this.ctx.throw(404, '错误页面测试');

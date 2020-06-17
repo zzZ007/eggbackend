@@ -58,6 +58,17 @@ class UserService extends Service {
       );
     }
   }
+  async findAll(page) {
+    const { ctx } = this;
+    const res = await ctx.model.User.findAndCountAll({
+      attributes: [ 'id', 'gender', 'username', 'nickname', 'avatar', 'email', 'phone', 'ip', [ 'created_at', 'createdAt' ]],
+      offset: (page - 1) * 10, // 开始的数据索引，比如当page=2 时offset=10 ，而pagesize我们定义为10，则现在为索引为10，也就是从第11条开始返回数据条目
+      limit: 10,
+      order: [[ 'createdAt', 'desc' ]],
+    });
+    ctx.helper.addPage(res, page);
+    return res;
+  }
 }
 
 module.exports = UserService;

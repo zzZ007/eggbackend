@@ -30,7 +30,7 @@ ORM框架：``sequelize``
 
 1.  安装依赖: ```yarn install / npm install```
 2.  导入数据库: ``` db/db.sql ```
-
+3. 修改数据库配置: ```config/config.default.js  中的 sequelize 配置```
 #### 使用说明
 
 开发环境启动： ```npm run dev```

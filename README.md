@@ -42,6 +42,8 @@ ORM框架：``sequelize``
 后台地址：``` 127.0.0.1:8080/admin ```
 测试账号： ```test/123456```
 
+[推荐阿里云服务器](https://www.aliyun.com/minisite/goods?userCode=3iqxrhre)
+
 #### 后台预览
 ![](http://cd-doc.oss-cn-chengdu.aliyuncs.com/egg/goscc-1.png "后台管理页")
 ![](http://cd-doc.oss-cn-chengdu.aliyuncs.com/egg/goscc-2.png "后台管理页")

@@ -96,7 +96,7 @@ module.exports = appInfo => {
   // 配置mysql信息
   config.sequelize = {
     dialect: 'mysql',
-    host: '47.105.204.69',
+    host: '127.0.0.1',
     dialectOptions: { // 配置日期返回格式化
       charset: 'utf8',
       dateStrings: true,
@@ -105,9 +105,9 @@ module.exports = appInfo => {
     timezone: '+08:00',
     underscored: true,
     port: 3306,
-    database: 'simple_zy', // mysql database dir
-    username: 'simpley_zy',
-    password: '5wn3WKtZaXncZaci',
+    database: 'eggbackend', // mysql database dir
+    username: 'root',
+    password: 'root',
     pool: {
       max: 5, // 连接池中最大连接数量
       min: 0, // 连接池中最小连接数量

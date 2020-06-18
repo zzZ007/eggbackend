@@ -30,6 +30,24 @@ class HomeController extends Controller {
   async chart() {
     await this.ctx.render('backend/chart');
   }
+  async general() {
+    await this.ctx.render('backend/general');
+  }
+  async buttons() {
+    await this.ctx.render('backend/buttons');
+  }
+  async modals() {
+    await this.ctx.render('backend/modals');
+  }
+  async generalForm() {
+    await this.ctx.render('backend/generalForm');
+  }
+  async advanced() {
+    await this.ctx.render('backend/advanced');
+  }
+  async editors() {
+    await this.ctx.render('backend/editors');
+  }
 
   // 修改密码
   async modifyAction() {

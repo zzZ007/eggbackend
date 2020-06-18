@@ -1,4 +1,4 @@
-{% macro aside(active) %}
+{% macro aside(active,open) %}
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
     <!-- Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library -->
@@ -30,11 +30,70 @@
     </li>
     <li class="nav-item">
         <a  href="/admin/chart" class="nav-link {% if active == 'chart' %} active {% endif %}" >
-            <i class="nav-icon fas fa-book"></i>
+            <i class="nav-icon fas fa-chart-pie"></i>
             <p>
                 图表ChartJS
             </p>
         </a>
+    </li>
+    <li class="nav-item has-treeview {% if open == 'elements' %} menu-open active {% endif %}" >
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tree"></i>
+            <p>
+                UI Elements
+                <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="/admin/general"  class="nav-link {% if active == 'general' %} active {% endif %} ">
+                    <i class="nav-icon far fa-circle text-blue"></i>
+                    <p>General</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/admin/buttons"  class="nav-link {% if active == 'buttons' %} active {% endif %} ">
+                    <i class="nav-icon far fa-circle text-danger"></i>
+                    <p>Buttons</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/admin/modals"  class="nav-link {% if active == 'modals' %} active {% endif %} ">
+                    <i class="nav-icon far fa-circle text-danger"></i>
+                    <p>Modals & Alerts</p>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="nav-item has-treeview {% if open == 'forms' %} menu-open active {% endif %}" >
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-edit"></i>
+            <p>
+                Forms
+                <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="/admin/generalForm"  class="nav-link {% if active == 'generalForm' %} active {% endif %} ">
+                    <i class="nav-icon far fa-circle text-blue"></i>
+                    <p>General Form</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/admin/advanced"  class="nav-link {% if active == 'advanced' %} active {% endif %} ">
+                    <i class="nav-icon far fa-circle text-danger"></i>
+                    <p>Advanced</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/admin/editors"  class="nav-link {% if active == 'editors' %} active {% endif %} ">
+                    <i class="nav-icon far fa-circle text-danger"></i>
+                    <p>Editors</p>
+                </a>
+            </li>
+        </ul>
     </li>
 
 </ul>

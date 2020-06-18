@@ -16,6 +16,7 @@ module.exports = app => {
   router.get('/admin/modify', backend.home.modify);
   router.post('/admin/modifyAction', backend.home.modifyAction);
   router.get('/admin/error', backend.home.error);
+  router.get('/admin/chart', backend.home.chart);
   // 前端
   router.get('/index', front.index.index);
 };

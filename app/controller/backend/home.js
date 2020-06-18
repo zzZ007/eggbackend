@@ -27,6 +27,9 @@ class HomeController extends Controller {
       info: this.ctx.app.config.info,
     });
   }
+  async chart() {
+    await this.ctx.render('backend/chart');
+  }
 
   // 修改密码
   async modifyAction() {
